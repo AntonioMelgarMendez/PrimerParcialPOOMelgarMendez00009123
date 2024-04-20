@@ -55,7 +55,7 @@ public class Main {
                             String os= sn.nextLine();
 
 
-                            Articulo celular = new Telefono(nombre,modelo,descripcion,precio,screensize,battery,os);
+                            Telefono celular = new Telefono(nombre,modelo,descripcion,precio,screensize,battery,os);
                             articulos.add(celular);
 
                         } else if (tipoescogido==2) {
@@ -68,15 +68,18 @@ public class Main {
                             System.out.println("Inserte graphicard");
                             String graphicard= sn.nextLine();
                             sn.nextLine();
-                            Articulo laptop = new Laptop(nombre,modelo,descripcion,precio,processor,ramsize,graphicard);
+                            Laptop laptop = new Laptop(nombre,modelo,descripcion,precio,processor,ramsize,graphicard);
                             articulos.add(laptop);
+
 
                         }
                         break;
                     case 2:
                         System.out.println("Inserte numero a buscar ");
                         int opcion2 = sn.nextInt();
-                        consultar(opcion2, articulos);
+                        System.out.println("Insertar nuevo precio");
+                        double precionuevp = sn.nextInt();
+                        modificarprecio(opcion2, precionuevp,articulos);
                         break;
                     case 3:
                         System.out.println("Inserte numero a buscar ");
@@ -84,6 +87,7 @@ public class Main {
                          consultar(opcion3,articulos);
                         break;
                     case 4:
+                        mostrartodo(articulos);
                         break;
                     case 5:
                         salir = false;
@@ -110,15 +114,49 @@ public class Main {
         return  opcion;
 
     }
-    public static void modificarprecio(){
+    public static void modificarprecio(int e,double nuevoprecio, ArrayList<Articulo> articulos){
+
+        for(int i=0;i < articulos.size();i++){
+            if(articulos.get(i).id == e){
+                Articulo articulo =articulos.get(i);
+                articulo.setPrecio(nuevoprecio);
+
+            }
+
+        }
 
     }
     public static void consultar(int e, ArrayList<Articulo> articulos){
+        boolean isfind=false;
         for(int i=0;i < articulos.size();i++){
-           if(articulos[i].){
+           if(articulos.get(i).id == e){
+             Articulo articulo =articulos.get(i);
+               System.out.println("Nombre:"+articulo.getNombre());
+               System.out.println("Modelo:"+articulo.getModelo());
+               System.out.println("Descripcion:"+articulo.getDescripcion());
+
+                isfind=true;
 
            }
 
         }
+        if(isfind==false){
+            System.out.println("No se encontro");
+        }
+    }
+    public static void mostrartodo(ArrayList<Articulo> articulos){
+
+        for(int i=0;i < articulos.size();i++){
+
+                Articulo articulo =articulos.get(i);
+                System.out.println("Nombre:"+articulo.getNombre());
+                System.out.println("Modelo:"+articulo.getModelo());
+                System.out.println("Descripcion:"+articulo.getDescripcion());
+
+
+
+
+        }
+
     }
 }
