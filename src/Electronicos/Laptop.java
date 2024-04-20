@@ -4,7 +4,9 @@ import Articulo.Articulo;
 
 public class Laptop extends Articulo implements Vendible{
 
-  c
+    private String processor;
+    private double ramsize;
+    private String graphicard;
     public String getProcessor() {
         return processor;
     }

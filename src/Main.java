@@ -51,6 +51,7 @@ public class Main {
                         }
                         break;
                     case 2:
+
                         break;
                     case 3:
                         break;
@@ -80,5 +81,17 @@ public class Main {
         int opcion = sn.nextInt();
         return  opcion;
 
+    }
+    public void consultar(int e, ArrayList<Articulo> articulos){
+        for(int i=0;i < articulos.size();i++){
+            if(articulos) {
+                System.out.println("Nombre:");
+                System.out.println("Modelo:");
+                System.out.println("Descripcion:");
+                System.out.println("Precio:");
+
+
+            }
+        }
     }
 }
