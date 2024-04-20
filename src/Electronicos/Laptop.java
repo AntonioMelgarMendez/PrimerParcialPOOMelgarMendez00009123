@@ -31,20 +31,31 @@ public class Laptop extends Articulo implements Vendible{
         this.graphicard = graphicard;
     }
 
-    public Laptop(Articulo articulo, String processor, double ramsize, String graphicard) {
-        super(articulo);
+    public Laptop(String nombre, String modelo, String descripcion, double precio, String processor, double ramsize, String graphicard) {
+        this.nombre= nombre;
+        this.modelo = modelo;
+        this.descripcion = descripcion;
+        this.precio=precio;
         this.processor = processor;
         this.ramsize = ramsize;
         this.graphicard = graphicard;
     }
 
     @Override
-    public double getPrecio() {
-        return 0;
+    public void getPrecio() {
+        System.out.println("Precio del telefono" + precio);
+
     }
 
     @Override
     public void showDescripcion() {
+        System.out.println("Nombre:"+nombre);
+        System.out.println("Modelo:"+modelo);
+        System.out.println("Descripcion:"+descripcion);
+        getPrecio();
+        System.out.println("Procesor:"+processor);
+        System.out.println("Ramsize:"+ramsize);
+        System.out.println("Graphicard:"+graphicard);
 
     }
 }

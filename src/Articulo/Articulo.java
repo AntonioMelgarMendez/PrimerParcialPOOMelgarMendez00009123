@@ -2,21 +2,15 @@ package Articulo;
 
 public abstract class Articulo {
 
-    private String nombre;
+    protected String nombre;
 
-    private String modelo;
-    private String descripcion;
-    private double precio;
+    protected String modelo;
+    protected String descripcion;
+    protected double precio;
     public static int  contador;
     public  int id=0;
 
-    public Articulo(Articulo articulo) {
-        nombre =articulo.nombre;
-        modelo = articulo.modelo;
-        descripcion = articulo.descripcion;
-        precio = articulo.precio;
-        id= contador();
-    }
+
     public static int contador(){
        return contador ++;
     }

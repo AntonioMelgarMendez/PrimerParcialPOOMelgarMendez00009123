@@ -7,8 +7,11 @@ public class Telefono extends Articulo implements Vendible{
             private String OSversion;
             private String batteryLife;
 
-    public Telefono(float screenSize, String OSversion, String batteryLife,Articulo articulo) {
-        super(articulo);
+    public Telefono(String nombre, String modelo, String descripcion, double precio,float screenSize, String OSversion, String batteryLife) {
+        this.nombre= nombre;
+        this.modelo = modelo;
+        this.descripcion = descripcion;
+        this.precio=precio;
         this.screenSize = screenSize;
         this.OSversion = OSversion;
         this.batteryLife = batteryLife;
@@ -16,12 +19,19 @@ public class Telefono extends Articulo implements Vendible{
 
 
     @Override
-    public double getPrecio() {
-        return 0;
+    public void getPrecio() {
+        System.out.println("Precio de la laptop" + precio);
+
     }
 
     @Override
     public void showDescripcion() {
+        System.out.println("Nombre:"+nombre);
+        System.out.println("Modelo:"+modelo);
+        System.out.println("Descripcion:"+descripcion);
+        getPrecio();
+        System.out.println("Screensize:"+screenSize);
+        System.out.println("Batterylife:"+batteryLife);
 
     }
 }
